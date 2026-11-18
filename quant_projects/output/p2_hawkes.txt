@@ -1,0 +1,15 @@
+O(N) recursion = 100.064370   O(N^2) double loop = 100.064370   (must match)
+
+=== Simulated check (N=7554) ===
+true : mu=0.500 alpha=0.800 beta=1.200 n=0.667
+fit  : mu=0.498 alpha=0.797 beta=1.190 n=0.670   se=[0.019 0.031 0.049]
+
+=== Fit on Binance BTCUSDT aggTrades: N=5000 events over 145 s ===
+mu    = 8.4247 /s  (background rate, se 0.2475)
+alpha = 2525.9463 /s  (jump per event, se 73.4398)
+beta  = 3342.6541 /s  (decay; memory 1/beta = 0.299 ms, half-life ln2/beta = 0.207 ms)
+BRANCHING RATIO n = alpha/beta = 0.756  -> ~76% of trades are triggered by earlier trades, 24% are exogenous
+implied mean rate mu/(1-n) = 34.481/s   observed = 34.459/s
+LR test Hawkes vs Poisson: LR = 32129.8  (chi2(2) 1% crit = 9.21)
+KS test of rescaled times vs Exp(1): Hawkes stat=0.0473 | Poisson stat=0.7033   (smaller = better fit)
+[plot] saved C:\Project\Qunat Project\quant_projects\output\p2_hawkes.png

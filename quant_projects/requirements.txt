@@ -1,0 +1,6 @@
+numpy
+pandas
+scipy
+matplotlib
+yfinance
+# optional: statsmodels (only used for a cross-check p-value in p1)

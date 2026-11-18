@@ -1,0 +1,21 @@
+[data] downloaded ['SPY']: 6758 rows 2000-01-03 -> 2026-11-13
+
+=== SPY: n = 6757 daily returns ===
+daily mean = 0.00031, std = 0.0121, skew = -0.21, excess kurtosis = 11.56  (normal = 0)
+Hill: k = 82 (tail = top 1.2% of days), threshold loss = 3.22%
+TAIL INDEX alpha_hat = 2.99  (95% CI 2.35 - 3.64)
+  -> moments of order >= alpha do not exist; alpha in 2-5 is typical for stocks
+
+ conf   Gaussian VaR   Hill VaR   empirical   | Gaussian ES   Hill ES   empirical ES
+ 95.0%        1.96%      2.00%      1.89%   |      2.47%      3.01%      2.95%
+ 99.0%        2.79%      3.43%      3.42%   |      3.20%      5.15%      5.01%
+ 99.5%        3.09%      4.33%      4.49%   |      3.48%      6.50%      6.10%
+ 99.9%        3.72%      7.41%      7.36%   |      4.05%     11.13%      9.33%
+
+99% VaR gap: Hill/Gaussian = 1.23x  -> Gaussian hides 0.64% of daily loss at the 99% level
+days with loss > 5 sigma: observed 10, normal predicts 0.0019
+
+rolling 99% VaR backtest (1000-day window, 5757 days, expect 58 breaches):
+  Gaussian  breaches =  134 (2.33%)  Kupiec LR =  74.59  p = 0.0000  REJECT
+  Hill      breaches =   84 (1.46%)  Kupiec LR =  10.74  p = 0.0011  REJECT
+[plot] saved C:\Project\Qunat Project\quant_projects\output\p4_hill_var.png
